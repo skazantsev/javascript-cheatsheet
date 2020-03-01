@@ -6,7 +6,7 @@
 const nums = [1, 2, 3];
 
 // empty array
-[];
+const empty = [];
 
 // 2D array
 [
@@ -15,14 +15,14 @@ const nums = [1, 2, 3];
     [7, 8, 9]
 ];
 
-// array of length N
+// array of length N, various ways to create:
 [...Array(3)];             // [undefined, undefined, undefined]
 [...new Array(3)];         // [undefined, undefined, undefined]
 Array(3).fill();           // [undefined, undefined, undefined]
 Array.from({ length: 3 }); // [undefined, undefined, undefined]
 
-// filling an array
-// syntax: fill(value, start?, end?): end is exclusive
+// filling an array using fill(value, start?, end?)
+// - end is exclusive
 Array(4).fill(0);           // [0, 0, 0, 0]
 Array(4).fill(0, 1);        // [undefined, 0, 0, 0]
 Array(4).fill(0, 1, 3);     // [undefined, 0, 0, undefined]
@@ -41,7 +41,7 @@ Array.from('abc');          // ['a', 'b', 'c']
 
 
 // for more complex scenarios a map function can be used
-// syntax: mapFn(value, index?, array?)
+// mapFn(value, index?, array?)
 // Array.from also accepts mapFn as a 2nd parameter.
 
 [1, 2, 3].map(val => val * val);
@@ -105,10 +105,9 @@ for (const x of nums) {
 
 // forEach
 nums.forEach(x => console.log(x));
-// or
-nums.forEach(x => {
-    console.log(x);
-});
+
+// forEach with index
+nums.forEach((value, index) => console.log(value, index));
 
 // iterating with index
 for (const [index, value] of nums.entries()) {
@@ -315,7 +314,7 @@ console.log(total);   // 2810.243684806425
 // sort strings with non-ASCII characters (descending)
 ['b', 'a', 'ä'].sort((x, y) => y.localeCompare(x)); // [ 'b', 'ä', 'a' ]
 
-// the method sorts elements in-place and returns a reference to a sorted array
+// sorts elements in-place and returns a reference to a sorted array
 const arr = ['green', 'red', 'blue'];
 const sorted = arr.sort();
 console.log(arr);               // ['blue', 'green', 'red']
@@ -330,7 +329,7 @@ console.log(sorted2);            // ['blue', 'green', 'red']
 console.log(arr2 === sorted2);   // false
 ```
 
-## Other methods
+## Other functions
 ``` javascript
 // join(separator?) - concatenates elements into a string
 [1, 2, 3, 4].join(' ');         // '1  2  3  4'
