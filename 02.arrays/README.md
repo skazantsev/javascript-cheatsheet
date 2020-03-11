@@ -209,7 +209,7 @@ nums.concat(5, 6);        // [1, 2, 3, 4, 5, 6]
 nums.concat([5, 6], [7]); // [1, 2, 3, 4, 5, 6, 7]
 ```
 
-## Search: find, findIndex, indexOf, lastIndexOf
+## Search: find, findIndex, 'in' operator, includes, indexOf, lastIndexOf
 ``` javascript
 const people = [
     { id: 1, age: 35 },
@@ -234,6 +234,17 @@ console.log(person);                   // { id: 4, age: 42 }
 
 // find an index of a first element satisfying a condition
 people.findIndex(x => x.age === 26);   // 1
+
+
+// 'in' operator
+2 in [1, 2, 3, 4];              // true
+5 in [1, 2, 3, 4];              // false
+
+
+// includes(value, fromIndex?)
+[1, 2, 3, 4].includes(2);        // true
+[1, 2, 3, 4].includes(5);        // false
+[1, 2, 3, 4].includes(2, 2);     // false
 
 
 // indexOf(element, fromIndex?)
@@ -342,11 +353,6 @@ console.log(arr2 === sorted2);   // false
 // reverse()
 [1, 2, 3, 4].reverse();          // [4, 3, 2, 1]
 [...'abcd'].reverse().join('');  // dcba
-
-// includes(value, fromIndex?)
-[1, 2, 3, 4].includes(2);        // true
-[1, 2, 3, 4].includes(5);        // false
-[1, 2, 3, 4].includes(2, 2);     // false
 
 // Array.isArray
 Array.isArray([1, 2, 3]);        // true
