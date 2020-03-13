@@ -78,7 +78,7 @@ function multiply(x, y = 2) {
     return x * y;
 }
 
-multiply(5); // 10
+multiply(5);    // 10
 multiply(5, 4); // 20
 
 
@@ -96,8 +96,8 @@ sum(1, 2, 3, 4); // 10
 sum(1);          // 1
 
 
-// using generators
-// generator function is a special function kind that can be exited and re-entered saving the context across re-entrances
+// using generator functions
+// it's is a special function that can be exited and re-entered saving the context across re-entrances
 function* idGenerator() {
     let index = 1;
     while(true) {
@@ -180,7 +180,8 @@ null == undefined; // true
 
 ### Type coercion
 ``` javascript
-// when using a '+' to concatenate a string with a number or boolean operands are converted to a string
+// when using a '+' to concatenate a string with a number or boolean
+// operands are converted to a string
 1 + '2';    // 12
 '1' + true; // 1true
 
@@ -331,7 +332,7 @@ dog instanceof Animal; // true, because Animal is a super class
 
 ### Exceptions
 ``` javascript
-// a method that throw an exception
+// a method that throws an exception
 function getDayOfWeek(dayNo) {
     const days = [ 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
     if (!days[dayNo])
