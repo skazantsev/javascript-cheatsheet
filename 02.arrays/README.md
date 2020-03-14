@@ -346,7 +346,11 @@ console.log(arr2 === sorted2);   // false
 
 
 // reverse()
+
+// in-place
 [1, 2, 3, 4].reverse();          // [4, 3, 2, 1]
+
+// without modifying the array
 [...'abcd'].reverse().join('');  // dcba
 
 // Array.isArray
