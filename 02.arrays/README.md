@@ -236,11 +236,6 @@ console.log(person);                   // { id: 4, age: 42 }
 people.findIndex(x => x.age === 26);   // 1
 
 
-// 'in' operator
-2 in [1, 2, 3, 4];              // true
-5 in [1, 2, 3, 4];              // false
-
-
 // includes(value, fromIndex?)
 [1, 2, 3, 4].includes(2);        // true
 [1, 2, 3, 4].includes(5);        // false
