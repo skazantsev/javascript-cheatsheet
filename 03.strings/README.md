@@ -131,7 +131,7 @@ const str = 'Hello' + ' ' + 'World!'; // Hello World!
 ``` javascript
 // replace(str|regex, newStr|function(char, offset?, <matches?>, str))
 
-// by default replace a first occurrence 
+// by default replaces a first occurrence 
 'is is is'.replace('is', 'was') // 'was is is'
 'is is is'.replace(/is/, 'was') // 'was is is'
 

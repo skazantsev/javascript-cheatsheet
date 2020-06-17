@@ -201,9 +201,9 @@ null == undefined; // true
 // !! could be useful to convert any truthy value to true
 const user = getUser();
 const userExists = !!user;
-console.log(userExists); //true
+console.log(userExists); // true
 
-// many operators convert operands to a number
+// some operators convert operands to a number
 '3' - '2';   // 1
 '3' - '2';   // 1
 +'2';        // 2

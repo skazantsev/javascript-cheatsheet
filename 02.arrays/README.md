@@ -209,7 +209,7 @@ nums.concat(5, 6);        // [1, 2, 3, 4, 5, 6]
 nums.concat([5, 6], [7]); // [1, 2, 3, 4, 5, 6, 7]
 ```
 
-## Search: find, findIndex, 'in' operator, includes, indexOf, lastIndexOf
+## Search: find, findIndex, includes, indexOf, lastIndexOf
 ``` javascript
 const people = [
     { id: 1, age: 35 },
@@ -342,7 +342,7 @@ console.log(arr2 === sorted2);   // false
 [1, 2, 3, 4].join('-->');       // '1-->2-->3-->4'
 
 // if a separator is not specified, ',' is used
-[1, 2, 3, 4].join();            // '1, 2, 3, 4'
+[1, 2, 3, 4].join();            // '1,2,3,4'
 
 
 // reverse()
