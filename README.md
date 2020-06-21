@@ -2,7 +2,7 @@
 - [Basics](01.basics)
 - [Arrays](02.arrays)
 - [Strings](03.strings)
-- [Objects](03.objects)
+- [Objects](04.objects)
 - TODO: Math
 - TODO: Date
 - TODO: Advanced collections (maps, sets)
