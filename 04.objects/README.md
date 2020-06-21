@@ -97,7 +97,7 @@ console.log(target); // { a: '1', b: '2' }
 console.log(target === merged2); // true - target and merged2 point to the same object
 ```
 
-## Enumerating
+## Enumeration
 ``` javascript
 const person = {
     name: 'John Doe',
