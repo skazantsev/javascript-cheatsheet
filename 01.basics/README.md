@@ -9,7 +9,7 @@ const bool = true;                 // Boolean
 const nullVal = null;              // null
 const undefinedVal = undefined;    // undefined
 const symbol = new Symbol();       // Symbol
-const obj = { 'lang': 'JS' };      // Object
+const obj = { lang: 'JS' };        // Object
 
 // arrays are also objects
 const arr = [1, 2, 3];
