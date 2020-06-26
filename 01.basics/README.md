@@ -236,7 +236,7 @@ function printName(name) {
 }
 printName('John Doe'); // John Doe
 printName();           // Anonymous
-//
+
 // longer version
 function printName_long(name) {
     const nameToPrint = name == undefined ? 'Anonymous' : name;
@@ -251,13 +251,19 @@ function getName(obj) {
 console.log(getName({ name: 'John Doe' })); // John Doe
 console.log(getName({ key: 'value' }));     // undefined
 console.log(getName());                     // undefined
-//
+
 // longer version
 function getName_long(obj) {
     return obj == undefined ? undefined : obj.name; 
 }
 
-// combining nullish coalescing with optional chaining
+// optional chaining with arrays
+function getFirst(arr) {
+    return arr?.[0];
+}
+
+
+// combining optional chaining with nullish coalescing
 // ?. + ?? = ♥
 function getNameLength(obj) {
     return obj?.name?.length ?? -1;
@@ -265,7 +271,7 @@ function getNameLength(obj) {
 console.log(getNameLength({ name: 'John Doe' })); // 8
 console.log(getNameLength({ key: 'value' }));     // -1
 console.log(getNameLength());                     // -1
-//
+
 // longer version
 function getNameLength_long(obj) {
     if (obj == null || obj.name == null)
