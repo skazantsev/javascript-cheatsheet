@@ -224,8 +224,56 @@ if (num % 3 === 0 && num % 5 === 0) {
     console.log(num);
 }
 
-// conditional operator ? :
+
+// conditional ternary operator (?:)
 console.log(num % 2 === 0 ? 'even' : 'odd');
+
+
+// nullish coalescing operator (??)
+function printName(name) {
+    const nameToPrint = name ?? 'Anonymous';
+    console.log(nameToPrint);
+}
+printName('John Doe'); // John Doe
+printName();           // Anonymous
+//
+// longer version
+function printName_long(name) {
+    const nameToPrint = name == undefined ? 'Anonymous' : name;
+    console.log(nameToPrint);
+}
+
+
+// optional chaining (?.)
+function getName(obj) {
+    return obj?.name;
+}
+console.log(getName({ name: 'John Doe' })); // John Doe
+console.log(getName({ key: 'value' }));     // undefined
+console.log(getName());                     // undefined
+//
+// longer version
+function getName_long(obj) {
+    return obj == undefined ? undefined : obj.name; 
+}
+
+// combining nullish coalescing with optional chaining
+// ?. + ?? = ♥
+function getNameLength(obj) {
+    return obj?.name?.length ?? -1;
+}
+console.log(getNameLength({ name: 'John Doe' })); // 8
+console.log(getNameLength({ key: 'value' }));     // -1
+console.log(getNameLength());                     // -1
+//
+// longer version
+function getNameLength_long(obj) {
+    if (obj == null || obj.name == null)
+        return -1;
+
+    return obj.name.length;
+}
+
 
 // switch
 const animal = 'fox';
