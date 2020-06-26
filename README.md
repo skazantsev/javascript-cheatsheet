@@ -3,7 +3,7 @@
 - [Arrays](02.arrays)
 - [Strings](03.strings)
 - [Objects](04.objects)
-- TODO: Math
+- [Math](05.math)
 - TODO: Date
 - TODO: Advanced collections (maps, sets)
 - TODO: Classes
