@@ -288,11 +288,11 @@ const sumOfDiffs = [1, 2, 5, 1].reduce((ans, val, i, arr) =>
 , 0);
 console.log(sumOfDiffs); // 8
 
-// compound interest
+// compound interest (yearly compounding)
 const amount = 100;
 const years = 35;
-const interest = 0.1; // 10%
-const total = [...Array(years)].reduce((total, val) => total + total * interest, amount);
+const interestRate = 0.1; // 10%
+const total = [...Array(years)].reduce((total, val) => total + total * interestRate, amount);
 console.log(total);   // 2810.243684806425
 ```
 
