@@ -5,6 +5,6 @@
 - [Objects](04.objects)
 - [Math](05.math)
 - [Dates](06.dates)
-- [Collections](06.collections)
+- [Collections](07.collections)
 - TODO: Classes
 - TODO: ES Modules
