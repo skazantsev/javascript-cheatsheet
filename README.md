@@ -4,7 +4,7 @@
 - [Strings](03.strings)
 - [Objects](04.objects)
 - [Math](05.math)
-- TODO: Date
+- [Dates](06.dates)
 - TODO: Advanced collections (maps, sets)
 - TODO: Classes
 - TODO: ES Modules
