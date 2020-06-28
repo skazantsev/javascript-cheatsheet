@@ -198,4 +198,4 @@ stack.pop(); // 2
 ## Heap
 JavaScript doesn't have a built-in heap.
 
-A simple queue implementation can be found at https://github.com/skazantsev/heap-javascript/blob/master/src/heap.js
+A simple binary heap implementation can be found at https://github.com/skazantsev/heap-javascript/blob/master/src/heap.js
