@@ -5,6 +5,6 @@
 - [Objects](04.objects)
 - [Math](05.math)
 - [Dates](06.dates)
-- TODO: Advanced collections (maps, sets)
+- [Collections](06.collections)
 - TODO: Classes
 - TODO: ES Modules
