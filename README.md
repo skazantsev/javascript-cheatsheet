@@ -6,5 +6,5 @@
 - [Math](05.math)
 - [Dates](06.dates)
 - [Collections](07.collections)
-- TODO: Classes
+- [Classes](08.classes)
 - TODO: ES Modules
