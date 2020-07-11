@@ -4,27 +4,37 @@
 ``` javascript
 // current date and time
 new Date();
+```
 
+``` javascript
 // from unix epoch
 const epoch = 946684800; // 2000-01-01T00:00:00.000Z
 new Date(epoch * 1000);
+```
 
+``` javascript
 // from string
 new Date('2000-01-01');               // parsed as UTC
 new Date('2000-01-01T12:00:00.000Z'); // parsed as UTC
 new Date('1 January 2000');           // parsed in the local timezone;
                                       // if the local timezone is UTC+1 the result is 1999-12-31T23:00:00.000Z
+```
 
+``` javascript
 // explicit construction (local timezone)
 // - new Date(year, monthIndex, day?, hours?, minutes?, seconds?, milliseconds?);
 // - monthIndex starts from 0
 new Date(2000, 0, 1);                 // 1999-12-31T23:00:00.000Z
 new Date(2000, 0, 1, 12, 0, 0, 0);    // 2000-01-01T11:00:00.000Z
+```
 
+``` javascript
 // explicit construction (UTC)
 new Date(Date.UTC(2000, 0, 1));                 // 2000-01-01T00:00:00.000Z
 new Date(Date.UTC(2000, 0, 1, 12, 0, 0, 0));    // 2000-01-01T12:00:00.000Z
+```
 
+``` javascript
 // clone
 const now = new Date();
 const cloned = new Date(now.getTime());
@@ -36,7 +46,9 @@ const cloned = new Date(now.getTime());
 Date.now(); // 946684800000
 // or
 new Date().getTime();
+```
 
+``` javascript
 // get unix epoch (seconds)
 Math.round(Date.now() / 1000); // 946684800
 ```
@@ -47,10 +59,14 @@ Math.round(Date.now() / 1000); // 946684800
 const now = new Date();
 const cloned = new Date(now.getTime());
 console.log(now === cloned);                     // false
+```
 
+``` javascript
 // use getTime to compare by value
 console.log(now.getTime() === cloned.getTime()); // true
+```
 
+``` javascript
 // sort example
 const dates = [
     new Date(Date.UTC(2000, 0, 1)),
@@ -78,7 +94,9 @@ date.getMinutes();       // 15
 date.getSeconds();       // 24
 date.getMilliseconds();  // 200
 date.getDay();           // 3 - day of the week (0 - Sunday, 3 - Wednesday)
+```
 
+``` javascript
 // get methods (based on UTC)
 date.getUTCFullYear();      // 2000
 date.getUTCMonth();         // 1 (0 - January, 1 - February)
@@ -88,13 +106,19 @@ date.getUTCMinutes();       // 15
 date.getUTCSeconds();       // 24
 date.getUTCMilliseconds();  // 200
 date.getUTCDay();           // 3 - day of the week (0 - Sunday, 3 - Wednesday)
+```
 
+``` javascript
 // get milliseconds from 1970-01-01
 date.getTime();
+```
 
+``` javascript
 // get timezone offset in minutes
 date.getTimezoneOffset();  // -60
+```
 
+``` javascript
 // set methods (based on the local timezone)
 date.setFullYear(2001);
 date.setMonth(0);
@@ -104,7 +128,9 @@ date.setMinutes(30);
 date.setSeconds(25);
 date.setMilliseconds(150);
 console.log(date.toISOString());  // 2001-01-01T09:30:25.150Z
+```
 
+``` javascript
 // set methods (based on UTC)
 date.setUTCFullYear(2001);
 date.setUTCMonth(0);
@@ -114,11 +140,15 @@ date.setUTCMinutes(30);
 date.setUTCSeconds(25);
 date.setUTCMilliseconds(150);
 console.log(date.toISOString());  // 2001-01-01T10:30:25.150Z
+```
 
+``` javascript
 // set time
 date.setTime(946684800000);
 console.log(date.toISOString());  // 2000-01-01T00:00:00.000Z
+```
 
+``` javascript
 // example: get start of today and yesterday
 const today = new Date(new Date().getTime());
 today.setUTCHours(0, 0, 0, 0);
@@ -135,26 +165,36 @@ const date = new Date(Date.UTC(2000, 0, 1));
 
 // ISO 8601
 date.toISOString();        // '2000-01-01T00:00:00.000Z'
+```
 
+``` javascript
 // toLocaleString(locales?, options?)
 date.toLocaleString();                             // formatted according to the current timezone
 date.toLocaleString('en-US');                      // 1/1/2000, 1:00:00 AM
 date.toLocaleString('en-US', { hour12: false });   // 1/1/2000, 1:00:00
 date.toLocaleString('en-GB', { timeZone: 'UTC' }); // 01/01/2000, 00:00:00
+```
 
+``` javascript
 // toLocaleDateString(locales?, options?)
 date.toLocaleDateString('nl-NL'); // 1-1-2000
+```
 
+``` javascript
 // toLocaleTimeString(locales?, options?)
 date.toLocaleTimeString('en-US', { timeZone: 'UTC' }); // 12:00:00 AM
+```
 
+``` javascript
 // using Intl.DateTimeFormat
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat
 const dateFormatter = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 const timeFormatter = new Intl.DateTimeFormat('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
 
 console.log(`${dateFormatter.format(date)} ${timeFormatter.format(date)}`); // Jan 1, 2000 01:00
+```
 
+``` javascript
 // methods to avoid
 date.toString();           // 'Sat Jan 01 2000 01:00:00 GMT+0100 (Central European Standard Time)'
 date.toDateString();       // 'Sat Jan 01 2000'

@@ -44,10 +44,14 @@ console.log(map);       // Map { 'red' => 3, 'blue' => 2 }
 // clear
 map.clear();
 console.log(map); // Map {}
+```
 
+``` javascript
 // initialize Map from Array of keys and values
-const map2 = new Map([ [ 'red', 3 ], [ 'green', 5 ], [ 'blue', 2 ] ]);
+const map = new Map([ [ 'red', 3 ], [ 'green', 5 ], [ 'blue', 2 ] ]);
+```
 
+``` javascript
 // example: given a bucket of marble balls find the most frequent marble color.
 const marbles = ['red', 'green', 'yellow', 'blue', 'green', 'green', 'orange', 'red', 'blue', 'yellow', 'blue', 'red', 'green'];
 
@@ -96,11 +100,15 @@ console.log(set); // Set { 2, 3 }
 // clear
 set.clear();
 console.log(set); // Set {}
+```
 
+``` javascript
 // initialize Set from Array
 const set2 = new Set([1, 2, 3, 2, 1, 3]);
 console.log(set2); // Set { 1, 2, 3 }
+```
 
+``` javascript
 // example: find a number of unique elements in an array
 const items = [2, 3, 1, 2, 5, 3, 2, 1];
 const ans = new Set(items).size;

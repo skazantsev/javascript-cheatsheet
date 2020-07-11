@@ -31,7 +31,9 @@ class Circle {
         return new Circle(circle.radius * 2);
     }
 }
+```
 
+``` javascript
 // creating a new instance
 const circle = new Circle(5);
 
@@ -79,7 +81,9 @@ class Point {
         return this.#y = val;
     }
 }
+```
 
+``` javascript
 const point = new Point(2, 3);
 point.#x;    // Uncaught SyntaxError: Private field '#x' must be declared in an enclosing class
 point.x;     // valid since using the getter
@@ -98,13 +102,17 @@ class Animal {
         console.log(`${this.name} goes ${this.sound}.`);
     }
 }
+```
 
+``` javascript
 class Dog extends Animal {
     constructor(name) {
         super(name, 'woof');
     }
 }
+```
 
+``` javascript
 const dog = new Dog('Angel');
 dog.makeSound(); // Angel goes woof.
 ```

@@ -6,17 +6,23 @@
 const singleQuotes = 'I contain \' and " characters';
 const doubleQuotes = "I contain ' and \" characters";
 const backticks = `I contain ' and " characters`;
+```
 
+``` javascript
 // empty string
 const empty = '';
+```
 
+``` javascript
 // long string
 const looong = 'This is a long string \
 that is split across \
 multiple lines!'
 console.log(looong);
 // This is a long string that is split across multiple lines!
+```
 
+``` javascript
 // multi-line string
 const multiline = `<body>
   <h1>Title</h1>
@@ -25,14 +31,20 @@ console.log(multiline);
 //1 <body>
 //2   <h1>Title</h1>
 //3 </body>
+```
 
+``` javascript
 // from array using join
 ['a', 'b', 'cd'].join(''); // 'abcd'
+```
 
+``` javascript
 // from char codes
 String.fromCharCode(72, 101, 108, 108, 111); // 'Hello'
 String.fromCharCode(72); // 'H'
+```
 
+``` javascript
 // string interpolation using template literals
 const who = 'World';
 console.log(`Hello ${who}`); // Hello World
@@ -48,16 +60,24 @@ const str = 'Hello';
 
 // string length
 console.log(str.length); // 5
+```
 
+``` javascript
 // first character
 console.log(str[0]); // 'H'
+```
 
+``` javascript
 // last character
 console.log(str[str.length - 1]); // 'o'
+```
 
+``` javascript
 // accessing a non-existing index
 console.log(str[10]); // undefined
+```
 
+``` javascript
 // get a char code using charCodeAt(index)
 'ABC'.charCodeAt(0); // 65
 'ABC'.charCodeAt(1); // 66
@@ -72,12 +92,16 @@ const str = 'Hello';
 for (let i = 0; i < str.length; ++i) {
     console.log(str[i]);
 }
+```
 
+``` javascript
 // for...of loop
 for (const char of str) {
     console.log(char);
 }
+```
 
+``` javascript
 // convert to an array and use forEach
 [...str].forEach(char => console.log(char));
 ```
@@ -87,10 +111,14 @@ for (const char of str) {
 // string -> array
 [...'Hello'];       // ['H', 'e', 'l', 'l', 'o']
 'Hello'.split('');  // ['H', 'e', 'l', 'l', 'o']
+```
 
+``` javascript
 // array -> string
 ['H', 'e', 'l', 'l', 'o'].join(''); // Hello
+```
 
+``` javascript
 // string -> number
 // - parseInt(string, radix?) for integer numbers
 // - parseFloat(string) for floating point numbers
@@ -98,11 +126,15 @@ parseInt('123', 10);        // 123
 parseInt('-123', 10);       // -123
 parseInt('123.456', 10);    // 123
 parseFloat('123.456', 10);  // 123.456
+```
 
+``` javascript
 // these are the same as parseInt and parseFloat
 Number.parseInt(123, 10);         // 123
 Number.parseFloat('123.456', 10); // 123.456
+```
 
+``` javascript
 // number -> string
 const num = 123.45;
 num.toString(); // '123.45'
@@ -114,14 +146,18 @@ num + '';       // '123.45'
 ``` javascript
 // using a '+' operator
 const str = 'Hello' + ' ' + 'World!'; // Hello World!
+```
 
+``` javascript
 // using join
 ['red', 'green', 'refactor'].join(', '); // red, green, refactor
 ['H', 'e', 'l', 'l', 'o'].join(''); // Hello
 
 // separator is ',' if not specified
 ['1', '2', '3'].join(); // 1,2,3
+```
 
+``` javascript
 // using concat
 'red'.concat(' ', 'green', ' ', 'refactor'); // red green refactor
 ''.concat(...['This', ' is', ' array']); // This is array
@@ -154,21 +190,29 @@ const str = 'Hello' + ' ' + 'World!'; // Hello World!
 'abcd'.startsWith('ab');    // true
 'abcd'.startsWith('ab', 1); // false
 'abcd'.startsWith('bc', 1); // true
+```
 
+``` javascript
 // endsWith(str, length?)
 'abcd'.endsWith('cd');      // true
 'abcd'.endsWith('cd', 3);   // false
 'abcd'.endsWith('bc', 3);   // true
+```
 
+``` javascript
 // includes(str, fromIndex?)
 'abcd'.includes('bc');      // true
 'abcd'.includes('bc', 2);   // false
+```
 
+``` javascript
 // indexOf(str, fromIndex?)
 'abbbc'.indexOf('b');       // 1
 'abbbc'.indexOf('bc');      // 3
 'abbbc'.indexOf('b', 2);    // 2
+```
 
+``` javascript
 // lastIndexOf(str, lastIndex?)
 'abbbc'.lastIndexOf('b');    // 3
 'abbbc'.lastIndexOf('b', 2); // 2
@@ -184,11 +228,15 @@ const str = 'Hello' + ' ' + 'World!'; // Hello World!
 // slice(start, end?)
 'abcdef'.slice(1);          // 'bcdef'
 'abcdef'.slice(1, 4);       // 'bcd'
+```
 
+``` javascript
 // substring(start, end?)
 'abcdef'.substring(1);      // 'bcdef'
 'abcdef'.substring(1, 4);   // 'bcd'
+```
 
+``` javascript
 // substr(start, length?)
 'abcdef'.substr(1);         // 'bcdef'
 'abcdef'.substr(1, 4);      // 'bcde'
@@ -199,33 +247,42 @@ const str = 'Hello' + ' ' + 'World!'; // Hello World!
 // split(separator, limit?)
 'a b c d'.split(' ');   // ['a', 'b', 'c', 'd']);
 'abcd'.split('', 3);    // ['a', 'b', 'c']);
+```
 
+``` javascript
 // convert a string to lower case
 'AbC'.toLowerCase();    // 'abc'
+```
 
+``` javascript
 // convert a string to upper case
 'AbC'.toUpperCase();    // 'ABC'
+```
 
+``` javascript
 // trim whitespace: spaces, tabs, line terminators etc.
 ' \t abc \r\n '.trim(); // 'abc'
 '  abc  '.trimStart();  // 'abc  '
 '  abc  '.trimEnd();    // '  abc'
+```
 
+``` javascript
 // repeat(count)
 'ab'.repeat(2);         // 'abab'
+```
 
+``` javascript
 // padStart(targetLength, padString?)
 // padEnd(targetLength, padString?)
 'abc'.padStart(5);      // '  abc'
 '123'.padStart(5, '0'); // '00123'
 'abc'.padEnd(5);      // 'abc  '
 '123'.padEnd(5, '0'); // '12300'
-
 ```
 
 ## Regular expressions
 ``` javascript
-// 1. match a string against a regular expression
+// Match a string against a regular expression.
 
 // matchAll(regexp)
 // - the most powerful and convenient matching method
@@ -272,9 +329,10 @@ console.log(areThereAnyMatches); // false
 const arrayWithOneMatch = [...versions.matchAll(/[0-9]+.[0-9]+.[0-9]+/)];
 console.log(arrayWithOneMatch.length); // 1
 console.log(arrayWithOneMatch[0][0]); // 1.2.15
+```
 
-
-// 2. search a pattern in a string
+``` javascript
+// Search a pattern in a string.
 
 // search(regexp) - returns the index of the first match or -1
 'Version: 1.2.15'.search(/[0-9]+/); // 9
@@ -283,18 +341,20 @@ console.log(arrayWithOneMatch[0][0]); // 1.2.15
 // RegExp.test(str) - returns true or false
 /[0-9]+/.test('Version: 1.2.15');   // true
 /[6-9]+/.test('Version: 1.2.15');   // false
+```
 
-
-// 3. replace
+``` javascript
+// Replace by regex.
 
 // a. remove . ! and whitespaces (\s - matches any whitespace character)
 '!!He l..lo!!'.replace(/[.!\s]+/g, ''); // 'Hello'
 
 // b. remove all non-word characters (\w - matches any word character)
 '!!He l..lo!!'.replace(/[^\w]+/g, '');  // 'Hello'
+```
 
-
-// 4. split
+``` javascript
+// Split by regex.
 '1.2.3 and 2.3.1 or 3.2.1'.split(/[a-z ]+/);
 // [ '1.2.3', '2.3.1', '3.2.1' ]
 ```
@@ -307,22 +367,26 @@ console.log('Alice' === 'Alice');          // true
 console.log('Alice'.localeCompare('Bob')); // -1
 console.log('Bob'.localeCompare('Bob'));   // 0
 console.log('Bob'.localeCompare('Alice')); // 1
+```
 
-// case-sensitive
-console.log('BOB' === 'bob');            // false
-console.log('BOB'.localeCompare('bob')); // 1
-
+``` javascript
 // case-insensitive
 'BOB'.toUpperCase() === 'bob'.toUpperCase();                    // true
 'BOB'.localeCompare('bob', undefined, { sensitivity: 'base' }); // 0
+```
 
+``` javascript
 // sort characters within a string
 [...'cebad'].sort().join(''); // abcde
+```
 
+``` javascript
 // sort strings case-sensitive
 [ 'bob', 'alice', 'Bob', 'Alice' ].sort();
 // [ 'Alice', 'Bob', 'alice', 'bob' ]
+```
 
+``` javascript
 // sort strings case-insensitive
 [ 'bob', 'alice', 'Bob', 'Alice' ].sort((s1, s2) => {
     return s1.localeCompare(s2, undefined, { sensitivity: 'base' });

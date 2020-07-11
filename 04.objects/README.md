@@ -4,7 +4,9 @@
 ``` javascript
 // empty object
 const empty = {};
+```
 
+``` javascript
 // with properties
 const person = {
     name: 'John Doe',
@@ -14,35 +16,48 @@ const person = {
 
 // accessing a property
 console.log(person.name);      // 'John Doe'
+```
 
+``` javascript
 // accessing a property using a bracket notation
 console.log(person['name']);   // 'John Doe'
+```
 
+``` javascript
 // a bracket notation is useful when a property name is dynamic
 const propName = Math.random() > 0.5 ? 'name' : 'age';
 console.log(person[propName]); // 'John Doe' or 20
+```
 
+``` javascript
 // accessing a non-existing property
 console.log(person.test);      // undefined
 console.log(person['test']);   // undefined
+```
 
+``` javascript
 // setting a property
 person.jobTitle = 'Software Engineer';
 console.log(person.jobTitle);  // 'Software Engineer'
 console.log(person);
 // { name: 'John Doe', age: 20, langs: [ 'JavaScript', 'Python' ], jobTitle: 'Software Engineer' }
+```
 
+``` javascript
 // deleting a property
 delete person.jobTitle;        // true - deleted
 console.log(person.jobTitle);  // undefined
 console.log(person);
 // { name: 'John Doe', age: 20, langs: [ 'JavaScript', 'Python' ] }
+```
 
-
+``` javascript
 // nested object
 const nested = { address: { country: 'Netherlands' } };
 console.log(nested.address.country); // 'Netherlands'
+```
 
+``` javascript
 // an object with a function
 const obj = {
     x: 2,
@@ -62,33 +77,45 @@ const obj = { langs: [ 'JavaScript', 'Python' ] };
 const anotherRef = obj;
 console.log(obj == anotherRef);    // true - variables point to the same object
 console.log(obj === anotherRef);   // true
+```
 
+``` javascript
 const anotherObj = { langs: [ 'JavaScript', 'Python' ] };
 console.log(obj == anotherObj);    // false - variables point to different objects
 console.log(obj === anotherObj);   // false
+```
 
+``` javascript
 // shallow copy using spread
 const obj2 = { ...obj };
 console.log(obj === obj2);             // false - obj and obj2 are different objects
 console.log(obj.langs === obj2.langs); // true - 'langs' points to the same array
+```
 
+``` javascript
 // shallow copy using assign
 const obj3 = Object.assign({}, obj);
 console.log(obj === obj3);             // false
 console.log(obj.langs === obj3.langs); // true
+```
 
+``` javascript
 // deep copy using serialization
 const obj4 = JSON.parse(JSON.stringify(obj));
 console.log(obj === obj4);             // false
 console.log(obj.langs === obj4.langs); // false - obj.langs and obj4.langs are different arrays
+```
 
+``` javascript
 // merge objects
 const obj_a = { a: '1' };
 const obj_b = { b: '2' };
 const obj_c = { c: '3' };
 const merged = Object.assign({}, obj_a, obj_b, obj_c);
 console.log(merged); // { a: '1', b: '2', c: '3' }
+```
 
+``` javascript
 // merge by changing a target object
 const target = { a: '1' };
 const source = { b: '2' };
@@ -111,8 +138,9 @@ console.log(Object.keys(person)); // ['name', 'age']
 for (let key of Object.keys(person)) {
     console.log(key);
 }
+```
 
-
+``` javascript
 // get an array of non-inherited property values
 console.log(Object.values(person)); // ['John Doe', 20]
 
@@ -120,8 +148,9 @@ console.log(Object.values(person)); // ['John Doe', 20]
 for (let value of Object.values(person)) {
     console.log(value);
 }
+```
 
-
+``` javascript
 // get an array of non-inherited property keys and values
 console.log(Object.entries(person));
 // [
@@ -133,8 +162,9 @@ console.log(Object.entries(person));
 for (let [key, value] of Object.entries(person)) {
     console.log(key, value);
 }
+```
 
-
+``` javascript
 // using for...in to iterate through all properties (including inherited ones)
 const developer = Object.create(person);
 developer.lang = 'JavaScript';
@@ -147,8 +177,9 @@ for (let key in developer) {
 // > age: 20
 //
 // Object.keys() and Object.values() would output only 'lang'
+```
 
-
+``` javascript
 // using objects as a hashtable
 //
 // example: finding even numbers that appear in the array more than 2 times.
