@@ -44,35 +44,35 @@ var c = 3;
 // There are multiple ways to define a function in JS:
 
 // 1. function declaration
-function add1(param1, param2) {
-    const val = param1 + param2;
-    return val;
+function add(param1, param2) {
+    return param1 + param2;
 }
-console.log(add1(2, 3)); // 5
 
 // 2. function expression
-const add2 = function(param1, param2) {
-    const val = param1 + param2;
+const add = function(param1, param2) {
+    return param1 + param2;
     return val;
 }
-console.log(add2(2, 3)); // 5
 
 // 3. arrow function
-const add3 = (param1, param2) => {
-    const val = param1 + param2;
-    return val;
+const add = (param1, param2) => {
+    return param1 + param2;
 }
-console.log(add3(2, 3)); // 5
 
 // 4. arrow function expression
-const add4 = (param1, param2) => param1 + param2;
-console.log(add4(2, 3)); // 5
+const add = (param1, param2) => param1 + param2;
 
+console.log(add(2, 3)); // 5
+```
+
+``` javascript
+// when using arrow functions
 // parenthesis for a single parameter can be omitted
 const times2 = val => val * 2;
 console.log(times2(5));  // 10
+```
 
-
+``` javascript
 // using default parameters
 function multiply(x, y = 2) {
     return x * y;
@@ -80,8 +80,9 @@ function multiply(x, y = 2) {
 
 multiply(5);    // 10
 multiply(5, 4); // 20
+```
 
-
+``` javascript
 // using rest parameters
 function sum(initial, ...args) {
     let s = initial;
@@ -94,8 +95,9 @@ function sum(initial, ...args) {
 sum(1, 2);       // 3
 sum(1, 2, 3, 4); // 10
 sum(1);          // 1
+```
 
-
+``` javascript
 // using generator functions
 // it's is a special function that can be exited and re-entered saving the context across re-entrances
 function* idGenerator() {
@@ -114,24 +116,32 @@ getId.next().value; // 2
 // compound assignment
 let num = 2;
 num += 3; // num = num + 3;
+```
 
+``` javascript
 // increment / decrement
 num++;
 num--;
 ++num;
 --num;
+```
 
+``` javascript
 // destructuring assignment
 // from an array
 let [a, b] = [2, 3];
 console.log(a); // 2;
 console.log(b); // 3;
+```
 
+``` javascript
 // from an object
 let { a, b } = { a: 2, b: 3 };
 console.log(a); // 2;
 console.log(b); // 3;
+```
 
+``` javascript
 // with rest parameters
 let [a, b, ...rest] = [2, 3, 4, 5];
 console.log(a); // 2;
@@ -142,16 +152,22 @@ let { a, b, ...rest } = { a: 2, b: 3, c: 4, d: 5 };
 console.log(a); // 2;
 console.log(b); // 3;
 console.log(rest); // { c: 4, d: 5 }
+```
 
+``` javascript
 // assignment separate from declaration
 let a, b;
 [a, b] = [2, 3];
+```
 
+``` javascript
 // default values
 let [a=1, b=2] = [3];
 console.log(a); // 3;
 console.log(b); // 2;
+```
 
+``` javascript
 // a shortcut for swapping 2 variables
 let x = 2, y = 3;
 [x, y] = [y, x];
@@ -169,7 +185,9 @@ console.log(y); // 2
 0 === false; // false
 0 === '';    // false
 null === undefined; // false
+```
 
+``` javascript
 2 == 2;     // true
 2 != 2;     // false
 2 == '2';   // true
@@ -184,8 +202,9 @@ null == undefined; // true
 // operands are converted to a string
 1 + '2';    // 12
 '1' + true; // 1true
+```
 
-
+``` javascript
 // boolean conversion
 // when using '!' operands are converted to a boolean
 !1;            // false
@@ -197,12 +216,16 @@ null == undefined; // true
 !NaN;        // true
 !null;       // true
 !undefined;  // true
+```
 
+``` javascript
 // !! could be useful to convert any truthy value to true
 const user = getUser();
 const userExists = !!user;
 console.log(userExists); // true
+```
 
+``` javascript
 // some operators convert operands to a number
 '3' - '2';   // 1
 '3' - '2';   // 1
@@ -223,12 +246,14 @@ if (num % 3 === 0 && num % 5 === 0) {
 } else {
     console.log(num);
 }
+```
 
-
+``` javascript
 // conditional ternary operator (?:)
 console.log(num % 2 === 0 ? 'even' : 'odd');
+```
 
-
+``` javascript
 // nullish coalescing operator (??)
 function printName(name) {
     const nameToPrint = name ?? 'Anonymous';
@@ -242,8 +267,9 @@ function printName_long(name) {
     const nameToPrint = name == undefined ? 'Anonymous' : name;
     console.log(nameToPrint);
 }
+```
 
-
+``` javascript
 // optional chaining (?.)
 function getName(obj) {
     return obj?.name;
@@ -261,8 +287,9 @@ function getName_long(obj) {
 function getFirst(arr) {
     return arr?.[0];
 }
+```
 
-
+``` javascript
 // combining optional chaining with nullish coalescing
 // ?. + ?? = ♥
 function getNameLength(obj) {
@@ -279,8 +306,9 @@ function getNameLength_long(obj) {
 
     return obj.name.length;
 }
+```
 
-
+``` javascript
 // switch
 const animal = 'fox';
 switch (animal) {
@@ -293,7 +321,6 @@ switch (animal) {
     default:
         console.log('...');
 }
-
 ```
 
 ## Loops
@@ -302,26 +329,34 @@ switch (animal) {
 for (let num = 1; num < 10; ++num) {
     console.log(num);
 }
+```
 
+``` javascript
 // for...of loop
 for (let num of [1, 2, 3, 4]) {
     console.log(num);
 }
+```
 
+``` javascript
 // while loop
 let num = 1;
 while (num < 10) {
     console.log(num);
     num++;
 }
+```
 
+``` javascript
 // do...while loop
 let num = 1;
 do {
     console.log(num);
     num++;
 } while (num < 10)
+```
 
+``` javascript
 // using 'break' to terminate a loop
 for (let num of [1, 2, 2, 3, 4]) {
     if (num == 2) {
@@ -332,7 +367,9 @@ for (let num of [1, 2, 2, 3, 4]) {
 }
 // -
 // +
+```
 
+``` javascript
 // using 'continue' to terminate the current iteration
 for (let num of [1, 2, 2, 3, 4]) {
     if (num == 2) {
@@ -353,34 +390,52 @@ for (let num of [1, 2, 2, 3, 4]) {
 // is string
 typeof 'Hello World' === 'string'; // OK, but doesn't work for "new String('Hello World')"
 toString.call('Hello World') === '[object String]'; // handles corner cases
+```
 
+``` javascript
 // is number
 typeof 3.14 === 'number'; // OK, but doesn't work for "new Number(3.14)"
 Number.isFinite(3.14); // handles corner cases
+```
 
+``` javascript
 // is integer
 Number.isInteger(3);
+```
 
+``` javascript
 // is boolean
 typeof true === 'boolean'; // OK, but doesn't work for "new Boolean(true)"
 toString.call(true) === '[object Boolean]'; // handles corner cases
+```
 
+``` javascript
 // is not undefined (strict)
 if (value !== undefined) { /* ... */ }
+```
 
+``` javascript
 // is not null (strict)
 if (value !== null) { /* ... */ }
+```
 
+``` javascript
 // is not null or undefined
 if (value != null) { /* ... */ }
+```
 
+``` javascript
 // is array
 Array.isArray([1, 2, 3]);
+```
 
+``` javascript
 // is function
 typeof Math.floor === 'function';
 toString.call(Math.floor) === '[object Function]';
+```
 
+``` javascript
 // is instance of class
 class Animal { }
 class Dog extends Animal { }
@@ -399,7 +454,9 @@ function getDayOfWeek(dayNo) {
 
     return days[dayNo];
 }
+```
 
+``` javascript
 // catching an exception
 try {
     const dayNo =  Math.floor(Math.random() * 10); // [0, 9]
