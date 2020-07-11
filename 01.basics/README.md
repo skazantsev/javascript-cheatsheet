@@ -1,9 +1,8 @@
 # Basics
 
 ## Types
-
-8 types in JavaScript:
 ``` javascript
+// 8 types
 const string = 'Hello World';      // String
 const num = 123.45;                // Number (floating-point double-precision 64-bit)
 const bigInt = 10000000000000000n; // BigInt
@@ -12,83 +11,70 @@ const nullVal = null;              // null
 const undefinedVal = undefined;    // undefined
 const symbol = new Symbol();       // Symbol
 const obj = { lang: 'JS' };        // Object
-```
 
-Arrays are objects:
-``` javascript
+// arrays are also objects
 const arr = [1, 2, 3];
-typeof arr; // object
-```
 
-Functions are callable object:
-``` javascript
+// functions are callable object
 const func = function(a, b) {
     return a + b;
 };
 const res = func(1, 2);
-
-typeof func; // function
 ```
 
 ## Variables
-
-`const` - a block-scoped variable that cannot be re-assigned. Preferred by default.
 ``` javascript
+// const - a block-scoped variable that cannot be re-assigned
+// preferred by default
 const a = 1;
 a = 2; // TypeError: Assignment to constant variable.
-```
 
-`let` - a block-scoped variable. Used when a variable needs to be re-assigned.
-``` javascript
+// let - a block-scoped variable
+// used when a variable needs to be re-assigned
 let b = 2;
 b = 3;
 console.log(b); // 3
-```
 
-`var` - a function-scoped or global-scoped variable. Used if the runtime doesn't support `const` and `let` e.g. old browsers.
-``` javascript
+// var - a function-scoped or global-scoped variable
+// used if the environment doesn't support 'const' and 'let' e.g. old browsers
 var c = 3;
 ```
 
 ## Functions
-
-There are multiple ways to define a function in JS.
-
-I. function declaration
 ``` javascript
+// There are multiple ways to define a function in JS:
+
+// 1. function declaration
 function add(param1, param2) {
     return param1 + param2;
 }
-```
 
-II. function expression
-``` javascript
+// 2. function expression
 const add = function(param1, param2) {
     return param1 + param2;
     return val;
 }
-```
 
-III. arrow function
-``` javascript
+// 3. arrow function
 const add = (param1, param2) => {
     return param1 + param2;
 }
-```
 
-IV. arrow function expression
-``` javascript
+// 4. arrow function expression
 const add = (param1, param2) => param1 + param2;
+
+console.log(add(2, 3)); // 5
 ```
 
-When using arrow functions parenthesis for a single parameter can be omitted.
 ``` javascript
+// when using arrow functions
+// parenthesis for a single parameter can be omitted
 const times2 = val => val * 2;
 console.log(times2(5));  // 10
 ```
 
-Using default parameters:
 ``` javascript
+// using default parameters
 function multiply(x, y = 2) {
     return x * y;
 }
@@ -97,8 +83,8 @@ multiply(5);    // 10
 multiply(5, 4); // 20
 ```
 
-Using rest parameters:
 ``` javascript
+// using rest parameters
 function sum(initial, ...args) {
     let s = initial;
     for (let x of args) {
@@ -112,10 +98,9 @@ sum(1, 2, 3, 4); // 10
 sum(1);          // 1
 ```
 
-Using generator functions.
-
-It's is a special function that can be exited and re-entered saving the context across re-entrances.
 ``` javascript
+// using generator functions
+// it's is a special function that can be exited and re-entered saving the context across re-entrances
 function* idGenerator() {
     let index = 1;
     while(true) {
@@ -128,37 +113,37 @@ getId.next().value; // 2
 ```
 
 ## Assignment
-
-Compound assignment:
 ``` javascript
+// compound assignment
 let num = 2;
 num += 3; // num = num + 3;
 ```
 
-Increment / decrement:
 ``` javascript
+// increment / decrement
 num++;
 num--;
 ++num;
 --num;
 ```
 
-Destructuring assignment from an array:
 ``` javascript
+// destructuring assignment
+// from an array
 let [a, b] = [2, 3];
 console.log(a); // 2;
 console.log(b); // 3;
 ```
 
-Destructuring assignment from an object:
 ``` javascript
+// from an object
 let { a, b } = { a: 2, b: 3 };
 console.log(a); // 2;
 console.log(b); // 3;
 ```
 
-Destructuring assignment with rest parameters:
 ``` javascript
+// with rest parameters
 let [a, b, ...rest] = [2, 3, 4, 5];
 console.log(a); // 2;
 console.log(b); // 3;
@@ -170,21 +155,21 @@ console.log(b); // 3;
 console.log(rest); // { c: 4, d: 5 }
 ```
 
-Destructuring assignment with default values:
 ``` javascript
+// assignment separate from declaration
+let a, b;
+[a, b] = [2, 3];
+```
+
+``` javascript
+// default values
 let [a=1, b=2] = [3];
 console.log(a); // 3;
 console.log(b); // 2;
 ```
 
-Assignment separate from declaration:
 ``` javascript
-let a, b;
-[a, b] = [2, 3];
-```
-
-A shortcut for swapping 2 variables:
-``` javascript
+// a shortcut for swapping 2 variables
 let x = 2, y = 3;
 [x, y] = [y, x];
 console.log(x); // 3
@@ -192,9 +177,9 @@ console.log(y); // 2
 ```
 
 ## Comparison
-
-`===` is more strict comparison than `==` and it's usually preferred.
 ``` javascript
+// === is more strict comparison than ==
+// it's usually preferred
 2 === 2;     // true
 2 !== 2;     // false
 2 === '2';   // false
@@ -212,22 +197,21 @@ null === undefined; // false
 null == undefined; // true
 ```
 
-### Type coercion
-
-When using a `+` to concatenate a string with a number or boolean operands are converted to a string.
+## Type coercion
 ``` javascript
+// when using a '+' to concatenate a string with a number or boolean
+// operands are converted to a string
 1 + '2';    // 12
 '1' + true; // 1true
 ```
 
-boolean conversion - when using `!` operands are converted to a boolean.
 ``` javascript
+// boolean conversion
+// when using '!' operands are converted to a boolean
 !1;            // false
 !'non-empty';  // false
-```
 
-falsy values:
-``` javascript
+// falsy values (values that are converted to false)
 !0;          // true
 !'';         // true
 !NaN;        // true
@@ -235,15 +219,15 @@ falsy values:
 !undefined;  // true
 ```
 
-`!!` could be useful to convert any truthy value to true.
 ``` javascript
+// !! could be useful to convert any truthy value to true
 const user = getUser();
 const userExists = !!user;
 console.log(userExists); // true
 ```
 
-Some operators convert operands to a number.
 ``` javascript
+// some operators convert operands to a number
 '3' - '2';   // 1
 '3' - '2';   // 1
 +'2';        // 2
@@ -251,9 +235,8 @@ Some operators convert operands to a number.
 ```
 
 ## Conditions
-
-`if else`
 ``` javascript
+// if else
 const num = Math.floor(Math.random() * 100); // [0, 99]
 if (num % 3 === 0 && num % 5 === 0) {
     console.log('FizzBuzz');
@@ -266,13 +249,13 @@ if (num % 3 === 0 && num % 5 === 0) {
 }
 ```
 
-Conditional ternary operator `?:`
 ``` javascript
+// conditional ternary operator (?:)
 console.log(num % 2 === 0 ? 'even' : 'odd');
 ```
 
-Nullish coalescing operator `??`
 ``` javascript
+// nullish coalescing operator (??)
 function printName(name) {
     const nameToPrint = name ?? 'Anonymous';
     console.log(nameToPrint);
@@ -287,8 +270,8 @@ function printName_long(name) {
 }
 ```
 
-Optional chaining `?.`
 ``` javascript
+// optional chaining (?.)
 function getName(obj) {
     return obj?.name;
 }
@@ -300,17 +283,15 @@ console.log(getName());                     // undefined
 function getName_long(obj) {
     return obj == undefined ? undefined : obj.name; 
 }
-```
 
-Optional chaining with arrays:
-``` javascript
+// optional chaining with arrays
 function getFirst(arr) {
     return arr?.[0];
 }
 ```
 
-Combining optional chaining with nullish coalescing:
 ``` javascript
+// combining optional chaining with nullish coalescing
 // ?. + ?? = ♥
 function getNameLength(obj) {
     return obj?.name?.length ?? -1;
@@ -328,8 +309,8 @@ function getNameLength_long(obj) {
 }
 ```
 
-`switch`
 ``` javascript
+// switch
 const animal = 'fox';
 switch (animal) {
     case 'cat':
@@ -344,23 +325,22 @@ switch (animal) {
 ```
 
 ## Loops
-
-`for` loop:
 ``` javascript
+// for loop
 for (let num = 1; num < 10; ++num) {
     console.log(num);
 }
 ```
 
-`for...of` loop:
 ``` javascript
+// for...of loop
 for (let num of [1, 2, 3, 4]) {
     console.log(num);
 }
 ```
 
-`while` loop:
 ``` javascript
+// while loop
 let num = 1;
 while (num < 10) {
     console.log(num);
@@ -368,8 +348,8 @@ while (num < 10) {
 }
 ```
 
-`do...while` loop:
 ``` javascript
+// do...while loop
 let num = 1;
 do {
     console.log(num);
@@ -377,8 +357,8 @@ do {
 } while (num < 10)
 ```
 
-Using `break` to terminate a loop:
 ``` javascript
+// using 'break' to terminate a loop
 for (let num of [1, 2, 2, 3, 4]) {
     if (num == 2) {
         console.log('+');
@@ -390,8 +370,8 @@ for (let num of [1, 2, 2, 3, 4]) {
 // +
 ```
 
-Using `continue` to terminate the current iteration:
 ``` javascript
+// using 'continue' to terminate the current iteration
 for (let num of [1, 2, 2, 3, 4]) {
     if (num == 2) {
         console.log('+');
@@ -407,58 +387,57 @@ for (let num of [1, 2, 2, 3, 4]) {
 ```
 
 ### Type checking / validation
-
-is `string`:
 ``` javascript
+// is string
 typeof 'Hello World' === 'string'; // OK, but doesn't work for "new String('Hello World')"
 toString.call('Hello World') === '[object String]'; // handles corner cases
 ```
 
-is `number`:
 ``` javascript
+// is number
 typeof 3.14 === 'number'; // OK, but doesn't work for "new Number(3.14)"
 Number.isFinite(3.14); // handles corner cases
 ```
 
-is integer `number`:
 ``` javascript
+// is integer
 Number.isInteger(3);
 ```
 
-is `boolean`:
 ``` javascript
+// is boolean
 typeof true === 'boolean'; // OK, but doesn't work for "new Boolean(true)"
 toString.call(true) === '[object Boolean]'; // handles corner cases
 ```
 
-is not `undefined` (strict):
 ``` javascript
+// is not undefined (strict)
 if (value !== undefined) { /* ... */ }
 ```
 
-is not `null` (strict):
 ``` javascript
+// is not null (strict)
 if (value !== null) { /* ... */ }
 ```
 
-is not `null` or `undefined`:
 ``` javascript
+// is not null or undefined
 if (value != null) { /* ... */ }
 ```
 
-is `array`:
 ``` javascript
+// is array
 Array.isArray([1, 2, 3]);
 ```
 
-is `function`:
 ``` javascript
+// is function
 typeof Math.floor === 'function';
 toString.call(Math.floor) === '[object Function]';
 ```
 
-is instance of `class`:
 ``` javascript
+// is instance of class
 class Animal { }
 class Dog extends Animal { }
 const dog = new Dog();
@@ -467,9 +446,8 @@ dog instanceof Animal; // true, because Animal is a super class
 ```
 
 ### Exceptions
-
-Throwing an exception:
 ``` javascript
+// a method that throws an exception
 function getDayOfWeek(dayNo) {
     const days = [ 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
     if (!days[dayNo])
@@ -479,8 +457,8 @@ function getDayOfWeek(dayNo) {
 }
 ```
 
-Catching an exception:
 ``` javascript
+// catching an exception
 try {
     const dayNo =  Math.floor(Math.random() * 10); // [0, 9]
     const name = getDayOfWeek(dayNo);
