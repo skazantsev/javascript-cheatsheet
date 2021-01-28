@@ -132,7 +132,7 @@ Math.log(1000); // 6.907755278982137
 
 ``` javascript
 // logarithm of x to base b
-const baseLog = (b, x) => Math.log(b) / Math.log(x);
+const baseLog = (b, x) => Math.log(x) / Math.log(b);
 baseLog(2, 1024);   // 10
 baseLog(10, 10000); // 4
 ```
